@@ -1,5 +1,6 @@
 from tools import ftimedelta, ptimedelta
 import config as cfg
+from copy import copy
 
 
 class Race:
@@ -26,6 +27,18 @@ class Race:
         self.start = ptimedelta(details[1])
         self.cp_time = [self.start + ptimedelta(cp.split(' ')[0]) for cp in details[2:]]
         self.cp_number = [int(cp.split(' ')[1][1:-1]) for cp in details[2:]]
+        # Удаление КП, которых нет у того, кто занял первое место
+        if self.place == 1:
+            Race.cp_number = self.cp_number
+        else:
+            cp_number = []
+            cp_time = []
+            for i in range(len(self.cp_number)):
+                if self.cp_number[i] in Race.cp_number:
+                    cp_number.append(self.cp_number[i])
+                    cp_time.append(self.cp_time[i])
+            self.cp_number = cp_number
+            self.cp_time = cp_time
 
     def __str__(self):
         return f'Место: {self.place}\nФамилия: {self.family}\nКоманда: {self.team}\n'\
