@@ -1,5 +1,6 @@
 import os
 import logging
+from io import StringIO
 from itertools import combinations
 import aiogram.utils.markdown as md
 from aiogram import Bot, Dispatcher, types
@@ -118,7 +119,6 @@ async def process_results(message: types.Message):
             # Сортировка пар забегов в порядке убывания числа КП со встречами
             togethers_pairs_filtered.sort(key=lambda x: len(x[0]), reverse=True)
             # Формирование списка пар со встречами на КП
-            from io import StringIO
             buffer = StringIO()
             count = 0
             togethers_pairs_added = []
