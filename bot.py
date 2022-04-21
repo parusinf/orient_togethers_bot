@@ -151,7 +151,7 @@ def get_user(user_id):
 
 
 def inc_count(message):
-    user = get_user(message.from_user.id)
+    user = await get_user(message.from_user.id)
     if user:
         user['last_date'] = datetime.now()
         user['count'] += 1
