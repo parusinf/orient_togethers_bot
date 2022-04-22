@@ -147,7 +147,7 @@ async def process_results(message: types.Message):
 
 
 def get_user(user_id):
-    return users.find_one({'user_id': user_id})
+    return users.find_one({'user_id': user_id}).copy()
 
 
 def inc_count(message):
