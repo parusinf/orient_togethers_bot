@@ -1,2 +1,1 @@
 aiogram==2.20
-pymongo==4.1.1

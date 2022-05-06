@@ -4,7 +4,7 @@ After=network-online.target home-pa-data.mount
 Requires=network-online.target home-pa-data.mount
 
 [Service]
-ExecStart=/home/pa/data/devel/python/orient_togethers_bot/venv/bin/python /home/pa/data/devel/python/orient_togethers_bot/bot.py
+ExecStart=/srv/orientbot/venv/bin/python /srv/orientbot/main.py
 
 [Install]
 WantedBy=multi-user.target

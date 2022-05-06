@@ -1,6 +1,5 @@
-from tools import ftimedelta, ptimedelta
-import config as cfg
-from copy import copy
+from app.orientbot.tools import ftimedelta, ptimedelta
+import config.config as config
 
 
 class Race:
@@ -12,7 +11,8 @@ class Race:
         Корвяков Николай №348
         Протвино, лично
         37:30
-        +00:00	12:19:00	02:11 (54)	03:36 (32)	06:22 (40)	10:48 (62)	13:19 (37)	15:02 (36)	17:51 (35)	19:41 (60)	22:16 (34)	24:22 (33)	28:38 (38)	31:02 (58)	31:49 (45)	33:33 (46)	35:12 (57)	37:10 (100)
+        +00:00	12:19:00	02:11 (54)	03:36 (32)	06:22 (40)	10:48 (62)	13:19 (37)	15:02 (36)	17:51 (35)	\
+        19:41 (60)	22:16 (34)	24:22 (33)	28:38 (38)	31:02 (58)	31:49 (45)	33:33 (46)	35:12 (57)	37:10 (100)
         """
         if len(data) < 5:
             raise IndexError('Таблица результатов должна быть в формате orgeo.ru')
@@ -56,7 +56,7 @@ def calc_togethers_pair(a: Race, b: Race):
     a_count = 0
     b_count = 0
     for i in range(len(a.cp_time)):
-        if abs(a.cp_time[i] - b.cp_time[i]).seconds < cfg.TOGETHER_SECONDS:
+        if abs(a.cp_time[i] - b.cp_time[i]).seconds < config.TOGETHER_SECONDS:
             togethers.append(i+1)
             # a отметился раньше b
             if a.cp_time[i] < b.cp_time[i]:
