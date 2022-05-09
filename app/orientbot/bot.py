@@ -66,8 +66,8 @@ async def cmd_help(message: types.Message):
             md.text(md.bold('\nРазработчик')),
             md.text(f'{config.DEVELOPER_NAME} {config.DEVELOPER_TELEGRAM}'),
             md.text(md.bold('\nИсходные коды бота')),
-            md.text('[https://github.com/parusinf/orient_togethers_bot]'
-                    '(https://github.com/parusinf/orient_togethers_bot)'),
+            md.text('[https://github.com/parusinf/orientbot]'
+                    '(https://github.com/parusinf/orientbot)'),
             sep='\n',
         ),
         reply_markup=types.ReplyKeyboardRemove(),
