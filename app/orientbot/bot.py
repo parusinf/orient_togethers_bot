@@ -1,5 +1,4 @@
 import os
-import logging
 from io import StringIO
 from itertools import combinations
 import aiogram.utils.markdown as md
@@ -9,16 +8,13 @@ from aiogram.types.message import ContentType
 from aiogram.types.input_file import InputFile
 from aiogram.types import ParseMode
 from app.orientbot.race import Race, calc_togethers_pair
-from app.orientbot.tools import echo_error, temp_file_path
+from app.orientbot.tools import echo_error
 import config.config as config
 
 
 # Команды бота
 BOT_COMMANDS = '''ping - проверка отклика бота
 help - как пользоваться этим ботом?'''
-
-# Уровень логов
-logging.basicConfig(level=logging.INFO)
 
 # Aiogram Telegram Bot
 bot = Bot(token=config.BOT_TOKEN)
@@ -91,7 +87,7 @@ async def cmd_ping(message: types.Message):
 async def process_results(message: types.Message):
     if message.document:
         file_name = message.document['file_name']
-        file_path = temp_file_path(file_name)
+        file_path = os.path.join(config.TEMP_DIR, file_name)
         try:
             # Загрузка файла от пользователя во временную директорию
             await message.document.download(destination_file=file_path)

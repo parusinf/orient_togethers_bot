@@ -1,12 +1,6 @@
 from datetime import timedelta
 
 
-def temp_file_path(file_name):
-    from os.path import join
-    from tempfile import gettempdir
-    return join(gettempdir(), file_name)
-
-
 async def echo_error(message, error):
     error_message = error or 'Пропущено сообщение об ошибке'
     await message.reply(error_message)

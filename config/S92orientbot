@@ -1,0 +1,20 @@
+#!/bin/sh
+
+ROOT=/opt
+SRV=$ROOT/srv
+
+case $1 in
+	start)
+	mkdir -p /opt/
+	$ROOT/bin/python3 $SRV/orientbot/main.py start &
+	;;
+	stop)
+	$ROOT/bin/python3 $SRV/orientbot/main.py stop &
+	;;
+	restart)
+	$ROOT/bin/python3 $SRV/orientbot/main.py restart &
+	;;
+	*)
+	echo "Usage: $0 {start|stop|restart}"
+	;;
+esac
