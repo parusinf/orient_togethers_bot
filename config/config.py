@@ -7,11 +7,11 @@ BASE_DIR = pathlib.Path(__file__).parent.parent
 PROGRAM = str(BASE_DIR).split(sep=os.path.sep)[-1]
 TEMP_DIR = tempfile.gettempdir()
 
-USE_LOG_FILE = False
-LOG_FILE = f'/opt/var/log/{PROGRAM}.log'
+USE_LOG_FILE = True
+LOG_FILE = '/tmp/orientbot.log'
 
-USE_PID_FILE = False
-PID_FILE = f'/opt/var/run/{PROGRAM}.pid'
+USE_PID_FILE = True
+PID_FILE = '/tmp/orient.pid'
 
 HELP_IMAGE_PATH = os.path.join(BASE_DIR, 'files', 'protrino-2022-04-16-m35.png')
 EXAMPLE_PATH = os.path.join(BASE_DIR, 'files', 'Сплиты-Протвино-2022-04-16-М18-М35.txt')
