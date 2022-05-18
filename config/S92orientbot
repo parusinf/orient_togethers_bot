@@ -5,7 +5,6 @@ SRV=$ROOT/srv
 
 case $1 in
 	start)
-	mkdir -p /opt/
 	$ROOT/bin/python3 $SRV/orientbot/main.py start &
 	;;
 	stop)

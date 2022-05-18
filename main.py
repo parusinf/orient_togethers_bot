@@ -19,9 +19,9 @@ logging.basicConfig(
 
 async def on_startup(_: Dispatcher):
     await bot.set_webhook(
-       config.WEBHOOK_URL,
-       certificate=InputFile(Path(CERTIFICATE_PATH)),
-       drop_pending_updates=True)
+        config.WEBHOOK_URL,
+        certificate=InputFile(Path(CERTIFICATE_PATH)),
+        drop_pending_updates=True)
     if config.USE_PID_FILE:
         pid_from_os = write_pid_file()
         pid_info = f' pid={pid_from_os}'
