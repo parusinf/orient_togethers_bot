@@ -59,7 +59,7 @@ def run(command):
         if pid_from_file:
             stop(pid_from_file)
     else:
-        logging.warning(f'Использование: tsheebot/main.py [start|stop|restart]')
+        logging.warning(f'Использование: orientbot/main.py [start|stop|restart]')
 
 
 if __name__ == '__main__':
