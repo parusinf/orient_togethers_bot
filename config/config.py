@@ -31,7 +31,7 @@ WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = 5003
 
 # Telegram Bot API Server
-BOT_API_SERVER_URL = 'http://localhost:5000'
+BOT_API_SERVER_URL = 'http://192.168.1.72:5000'
 
 # Разработчик
 DEVELOPER_NAME = 'Павел Никитин'
