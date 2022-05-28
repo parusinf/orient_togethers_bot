@@ -3,6 +3,7 @@ from io import StringIO
 from itertools import combinations
 import aiogram.utils.markdown as md
 from aiogram import Bot, Dispatcher, types
+from aiogram.bot.api import TelegramAPIServer
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types.message import ContentType
 from aiogram.types.input_file import InputFile
@@ -16,8 +17,11 @@ import config.config as config
 BOT_COMMANDS = '''ping - проверка отклика бота
 help - как пользоваться этим ботом?'''
 
+# Create private Bot API server endpoints wrapper
+local_server = TelegramAPIServer.from_base(config.BOT_API_SERVER_URL)
+
 # Aiogram Telegram Bot
-bot = Bot(token=config.BOT_TOKEN)
+bot = Bot(token=config.BOT_TOKEN, server=local_server)
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
