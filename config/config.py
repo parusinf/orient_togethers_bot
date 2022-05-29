@@ -7,7 +7,7 @@ BASE_DIR = pathlib.Path(__file__).parent.parent
 PROGRAM = str(BASE_DIR).split(sep=os.path.sep)[-1]
 TEMP_DIR = tempfile.gettempdir()
 
-USE_LOG_FILE = True
+USE_LOG_FILE = False
 LOG_FILE = '/tmp/orientbot.log'
 
 USE_PID_FILE = True
@@ -31,7 +31,7 @@ WEBAPP_HOST = '0.0.0.0'
 WEBAPP_PORT = 5003
 
 # Telegram Bot API Server
-BOT_API_SERVER_URL = 'http://192.168.1.72:5000'
+BOT_API_SERVER_URL = 'https://api.telegram.org'
 
 # Разработчик
 DEVELOPER_NAME = 'Павел Никитин'
