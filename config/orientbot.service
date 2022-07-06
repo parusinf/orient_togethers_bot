@@ -1,7 +1,7 @@
 [Unit]
 Description=Telegram bot @orient_togethers_bot
-After=network-online.target home-pa-data.mount
-Requires=network-online.target home-pa-data.mount
+After=network-online.target
+Requires=network-online.target
 
 [Service]
 ExecStart=/srv/orientbot/venv/bin/python /srv/orientbot/main.py
