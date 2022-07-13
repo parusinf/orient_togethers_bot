@@ -10,7 +10,7 @@ TEMP_DIR = tempfile.gettempdir()
 USE_LOG_FILE = False
 LOG_FILE = '/tmp/orientbot.log'
 
-USE_PID_FILE = True
+USE_PID_FILE = False
 PID_FILE = '/tmp/orientbot.pid'
 
 HELP_IMAGE_PATH = os.path.join(BASE_DIR, 'files', 'protrino-2022-04-16-m35.png')
